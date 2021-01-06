@@ -1,0 +1,13 @@
+#!/bin/bash
+
+PS3="Choose the file you need to be moved, or press 'q' to quit: "
+  yourFile=$(find /path/to/directory/ -type f -name <name of file extension> -printf '%f\n')
+   #outputs a menu showing a list of files
+   
+   select chosenFile in $yourFile; do
+    if [ -n "yourFile"]; then
+      mv ${yourFile} /path/to/new/directory
+      #file is chosen then moved to the new directory path
+      fi
+      break
+     done
